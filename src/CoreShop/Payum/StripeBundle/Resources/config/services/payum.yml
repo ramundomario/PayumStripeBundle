@@ -1,0 +1,7 @@
+services:
+    CoreShop\Payum\StripeBundle\Action\ConvertPaymentAction:
+        public: true
+        arguments:
+            $detailsProvider: '@coreshop.payum_stripe_checkout.provider.details'
+        tags:
+            - { name: payum.action, factory: stripe_checkout, alias: coreshop.payum_stripe_checkout.convert_payment }

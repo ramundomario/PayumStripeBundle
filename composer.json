@@ -12,15 +12,14 @@
     "license": "GPL-3.0-or-later",
     "authors": [
         {
-            "name": "Certimeter Group Mario Ramundo",
-            "email": "mario.ramundo@certimetergroup.com",
-            "homepage": "http://www.certimetergroup.com/",
+            "name": "Mario Ramundo",
+            "email": "ramundomario@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": ">=7.2",
-        "flux-se/payum-stripe": "^1.2",
+        "flux-se/payum-stripe-bundle": "^2.0",
         "coreshop/payum-bundle": "^2.0"
     },
     "config": {

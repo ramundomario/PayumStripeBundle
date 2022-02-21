@@ -1,0 +1,14 @@
+services:
+    CoreShop\Payum\StripeBundle\Form\Payment\StripeGatewayConfigurationType:
+        tags:
+            - { name: form.type }
+
+    CoreShop\Payum\StripeBundle\Form\Payment\StripeCheckoutGatewayConfigurationType:
+        tags:
+            - { name: coreshop.gateway_configuration_type, type: stripe_checkout }
+            - { name: form.type }
+
+    CoreShop\Payum\StripeBundle\Form\Payment\StripeJsGatewayConfigurationType:
+        tags:
+            - { name: coreshop.gateway_configuration_type, type: stripe_js }
+            - { name: form.type }

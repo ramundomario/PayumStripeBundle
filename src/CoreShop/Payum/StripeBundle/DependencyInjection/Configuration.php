@@ -48,6 +48,10 @@ class Configuration implements ConfigurationInterface
         $node
             ->addDefaultsIfNotSet()
             ->children()
+                ->arrayNode('payment_method_types')
+                    ->scalarPrototype()->end()
+                    ->info('Other possible values https://stripe.com/docs/api/checkout/sessions/create#create_checkout_session-payment_method_types')
+                ->end()
                 ->arrayNode('line_item_image')
                     ->addDefaultsIfNotSet()
                     ->children()

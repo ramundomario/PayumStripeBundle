@@ -34,6 +34,10 @@ class StripeExtension extends Extension
         $configs = $this->processConfiguration($this->getConfiguration([], $container), $configs);
 
         $container->setParameter(
+            'coreshop.payum_stripe_checkout.payment_method_types',
+            $configs['payment_method_types']
+        );
+        $container->setParameter(
             'coreshop.payum_stripe_checkout.line_item_image.thumbnail_name',
             $configs['line_item_image']['thumbnail_name']
         );

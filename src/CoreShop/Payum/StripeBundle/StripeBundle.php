@@ -15,11 +15,14 @@ declare(strict_types=1);
 namespace CoreShop\Payum\StripeBundle;
 
 use CoreShop\Payum\StripeBundle\DependencyInjection\Compiler\PayumGatewayConfigOverride;
+use FluxSE\PayumStripeBundle\FluxSEPayumStripeBundle;
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
 use Pimcore\Extension\Bundle\Traits\PackageVersionTrait;
+use Pimcore\HttpKernel\Bundle\DependentBundleInterface;
+use Pimcore\HttpKernel\BundleCollection\BundleCollection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class StripeBundle extends AbstractPimcoreBundle
+class StripeBundle extends AbstractPimcoreBundle implements DependentBundleInterface
 {
     use PackageVersionTrait;
 
@@ -32,6 +35,14 @@ class StripeBundle extends AbstractPimcoreBundle
         ]));
 
         parent::build($container);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function registerDependentBundles(BundleCollection $collection)
+    {
+        $collection->addBundle(new FluxSEPayumStripeBundle());
     }
 
     /**
